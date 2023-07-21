@@ -1,0 +1,29 @@
+CREATE TABLE user (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  lastname VARCHAR(50) NOT NULL,
+  firstname VARCHAR(50) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  hashedPassword VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
+CREATE TABLE experience (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  id_user INT NOT NULL,
+  enterprise VARCHAR(100) NULL,
+  localisation VARCHAR(100) NULL,
+  jobTitle VARCHAR(50) NULL,
+  startDate DATE NULL,
+  endDate DATE NULL,
+  CONSTRAINT fk_experience_user
+  FOREIGN KEY (id_user)
+  REFERENCES user(id)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
+CREATE TABLE task (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  id_experience INT NOT NULL,
+  taskDesc TEXT NULL,
+  CONSTRAINT fk_task_experience
+  FOREIGN KEY (id_experience)
+  REFERENCES experience(id)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;

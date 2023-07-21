@@ -1,3 +1,7 @@
+## CV Chloé Elle
+
+Venez découvrir mon parcours et ce dont je suis capable !
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
